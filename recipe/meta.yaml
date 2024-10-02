@@ -1,5 +1,5 @@
 {% set name = "pybashify" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pybashify-{{ version }}.tar.gz
-  sha256: f0f6c419aa7826b2f6558db5fcd46824e4dbc99d10e26ccd2279e7a7e53f1851
+  sha256: 95388432b32e0e78b2b72fddccaea3bfa8497b181576321ce8bc13f3456147f4
 
 build:
   entry_points:
