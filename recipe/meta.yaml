@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "pybashify" %}
 {% set version = "0.1.1" %}
 
@@ -14,15 +15,15 @@ build:
     - bashify = pybashify.cli.main:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - typer >=0.12.5,<0.13
     - pydantic >=2.0
     - numpy >=2.1.0,<3
@@ -36,6 +37,7 @@ test:
     - bashify --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Use Python to write bash scripts while interop w/ bash
